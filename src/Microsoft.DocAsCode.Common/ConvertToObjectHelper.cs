@@ -32,7 +32,7 @@ namespace Microsoft.DocAsCode.Common
             }
             if (raw is JObject jObject)
             {
-                return jObject.ToObject<Dictionary<string, object>>().ToDictionary(p => p.Key, p => ConvertJObjectToObject(p.Value));
+                return jObject.ToObject<Dictionary<string, object>>(JsonUtility.DefaultSerializer.Value).ToDictionary(p => p.Key, p => ConvertJObjectToObject(p.Value));
             }
             return raw;
         }

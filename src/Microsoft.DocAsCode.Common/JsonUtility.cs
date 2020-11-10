@@ -21,7 +21,9 @@ namespace Microsoft.DocAsCode.Common
                 Converters =
                 {
                     new StringEnumConverter { CamelCaseText = true },
-                }
+                },
+                TypeNameHandling = TypeNameHandling.None,
+                MetadataPropertyHandling = MetadataPropertyHandling.Ignore
             });
 
         public static void Serialize(TextWriter writer, object graph, Formatting formatting = Formatting.None, JsonSerializer serializer = null)
